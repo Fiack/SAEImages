@@ -1,3 +1,9 @@
+---
+header-includes: \usepackage{color}
+geometry: margin=30mm
+fontsize: 17pt
+---
+
 # Sae Images
 
 ## Partie A
@@ -40,7 +46,7 @@ Pour changer la couleur rouge en couleur bleue, quand on regles les couleurs au 
 #### 8) 
 Pour inversez le damier j'ai échanger la place des couleurs bleu et blanche dans les parametre de la palette, j'ai d'abord mis le blanc puis le bleue
 #### 9)
-[Image réponses okteta](A).png)
+![Image réponses okteta](A4).png)
 #### 11) 
 a l'adresse 0x29
 #### 12) 
@@ -60,7 +66,7 @@ inversion 4 en -4
 #### 3) 
 inversion de A9 01 00 00 en 57 FE FF FF
 1010 1001 0000 0001 0000 0000 0000 0000 en 0101 0111 1111 1110 1111 1111 1111 1111
-[Image réponses okteta](A5.png)
+![Image réponses okteta](A5.png)
 
 ### A.6) 
 #### 1) 
@@ -69,7 +75,7 @@ il a augmenté car on est passer a une palette de 256 couleurs (00 01 00 00) et 
 #### 2) 
 on peut trouver a A0  codé sur 4 octet l'adresse de début ( ici 36 04 00 00)
 #### 3) 
-[Image réponses okteta](A6.png)
+![Image réponses okteta](A6.png)
 on lit les octets deux par deux, le premier est le nombre d'occurence de la couleurs qui est définit dans le deuxieme octet
 00 représente le blanc et 01 représente le rouge
 donc si on a 01 00 on aura un pixels rouge et si on a 01 01 on aura un pixel blanc
@@ -85,24 +91,24 @@ donc si on lit notre image ci-dessus on a :
 le poid de l'image est 1102 octets
 le poid est moins grand que précedemment car dans cette image il y'a des suite de pixels qui ont la meme couleurs, donc la compression en RLE prend tout son sens car elle permet de coder ça plus facilement 
 #### 2) 
-[Image réponses okteta](A7.png)
+![Image réponses okteta](A7.png)
 04 01 00 00 04 00 00 00 04 00 - 4 blanc, fin de ligne, 4 rouge, fin de ligne, 4 rouge
 00 00 01 01 01 00 01 01 01 00 00 00 00 01 - fin de ligne, 1 blanc, 1 rouge, 1 blanc, 1 rouge, fin de ligne, fin d'image
 
 ### A.8)
-[Image réponses okteta](A8.png)
+![Image réponses okteta](A8.png)
 j'ai modifié la premiere ligne afin d'obtenir 2 blanc, 1 rouge, 1 blanc donc 
 je suis passer de 04 01 00 00 a 02 01 01 00 01 01 00 00
 j'ai donc rajouté 4 octets donc je suis aller modifier la taille du fichier de 4E 04 00 00 a 52 04 00 00  
 
 ### A.9)
-[Image réponses okteta](A9_1.png)
+![Image réponses okteta](A9_1.png)
 J'ai d'abord rajouter le bleu et vert dans ma palette de couleurs donc FF 00 00 et 00 FF 00 qui seront donc la couleurs 02 et 03
-[Image réponses okteta](A9_2.png)
+![Image réponses okteta](A9_2.png)
 j'ai ensuite modifier les valeurs héxadecimal de l'image pour que les pixels ait la bonne couleurs
 
 ### A.10)
-[Image réponses okteta](A10.png)
+![Image réponses okteta](A10.png)
 Pour réduire le nombre de couleurs on change le nombre de couleurs de la palette de 256 a 4 donc : 
 00 01 00 00 a 04 00 00 00
 ensuite on peut enlever tout les 00 00 00 00 qui correspondait aux couleurs noirs de la palette de 256 couleurs, enfin il nous reste a changer la taille du fichier en fonction du nouveau poids du fichier donc ici 106 soit 6A et enfin mettre dans le header la nouvelle adresse où l'image commence donc 46 00 00 00
@@ -111,18 +117,18 @@ ensuite on peut enlever tout les 00 00 00 00 qui correspondait aux couleurs noir
 ## Partie B
 
 ### B.1)
-[Image réponses VScode](B1_1)![Image Rendu](B1_2)
+![Image réponses VScode](B1_1)![Image Rendu](B1_2)
 
 ### B.2)
-[Image réponses VScode](B2_1)![Image Rendu](B2_2)
+![Image réponses VScode](B2_1)![Image Rendu](B2_2)
 
 ### B.3)
-[Image réponses VScode](B3_1)![Image Rendu](B3_2)
+![Image réponses VScode](B3_1)![Image Rendu](B3_2)
 
 ### B.4)
-[Image réponses VScode](B4_1)![Image Rendu](B4_2)
+![Image réponses VScode](B4_1)![Image Rendu](B4_2)
 
 ### B.5)
-[Image réponses VScode](B5_1)![Image Rendu](B5_2)
+![Image réponses VScode](B5_1)![Image Rendu](B5_2)
 
-[Image réponses VScode](B6_1)![Image Rendu](B6_2)
+![Image réponses VScode](B6_1)![Image Rendu](B6_2)
