@@ -19,63 +19,41 @@ Il faut modifiez la taille du fichier dans okteta: 99 passe a 9A
 
 ### A.3) 
 le poid de l'image augmente a 102 (74+28=102)
-#### 1)
-Toujours 24 bits par pixels -> car encore codée a 0x18
-#### 2)
-0x30 donc 48 octets
-#### 3)
-Il n'y a pas de compression
-#### 4)
-Le codage des pixels n'a pas changé
+**1)** Toujours 24 bits par pixels -> car encore codée a 0x18
+**2)** 0x30 donc 48 octets
+**3)** Il n'y a pas de compression
+**4)** Le codage des pixels n'a pas changé
 
 ### A.4)
-#### 1) 
-1bits par pixels
-#### 2) 
-0x10 donc 16 octets
-#### 3) 
-Oui il y'a une compression utilisé
-#### 4) 
-Ils sont codée juste apres l'entete du fichiers, sur 4 octets
-#### 5) 
-Il y'a deux couleurs dans la palette, le rouge est blanc qui se situe au début -> 0x00 0x00 0xFF et 0xFF 0xFF 0xFF
-#### 6) 
-Oui le codage des pixels a changé, maintenant on code sur 4 octet en modifiant seulement le premier quartet du deuxieme octet, 
-#### 7) 
-Pour changer la couleur rouge en couleur bleue, quand on regles les couleurs au début j'ai modifié le rouge 0x00 0x00 0xFF en bleue 0xFF 0x00 0x00
-#### 8) 
-Pour inversez le damier j'ai échanger la place des couleurs bleu et blanche dans les parametre de la palette, j'ai d'abord mis le blanc puis le bleue
-#### 9)
-![Image réponses okteta](A4).png)
-#### 11) 
-a l'adresse 0x29
-#### 12) 
-la 13 couleurs = C
-#### 13) 
-?? 76 ?
-#### 14) 
-on rajoute des E au début (E car 15 couleurs est bleu)
-#### 15)
+**1)** 1bits par pixels
+**2)**  0x10 donc 16 octets
+**3)**  Oui il y'a une compression utilisé
+**4)**  Ils sont codée juste apres l'entete du fichiers, sur 4 octets
+**5)**  Il y'a deux couleurs dans la palette, le rouge est blanc qui se situe au début -> 0x00 0x00 0xFF et 0xFF 0xFF 0xFF
+**6)**  Oui le codage des pixels a changé, maintenant on code sur 4 octet en modifiant seulement le premier quartet du deuxieme octet, 
+**7)**  Pour changer la couleur rouge en couleur bleue, quand on regles les couleurs au début j'ai modifié le rouge 0x00 0x00 0xFF en bleue 0xFF 0x00 0x00
+**8)**  Pour inversez le damier j'ai échanger la place des couleurs bleu et blanche dans les parametre de la palette, j'ai d'abord mis le blanc puis le bleue
+**9)** ![Image réponses okteta](A4).png
+**11)**  a l'adresse 0x29
+**12)**  la 13 couleurs = C
+**13)**  ?? 76 ?
+**14)**  on rajoute des E au début (E car 15 couleurs est bleu)
+**15)**
 
 ### A.5)
-#### 2)
-inversion 4 en -4
+**2)** inversion 4 en -4
 04 00 00 00 en FC FF FF FF
 0100 0000 0000 0000 0000 0000 0000 0000 en 1111 1100 1111 1111 1111 1111 1111 1111
 
-#### 3) 
-inversion de A9 01 00 00 en 57 FE FF FF
+**3)**  inversion de A9 01 00 00 en 57 FE FF FF
 1010 1001 0000 0001 0000 0000 0000 0000 en 0101 0111 1111 1110 1111 1111 1111 1111
 ![Image réponses okteta](A5.png)
 
 ### A.6) 
-#### 1) 
-poid de 60 04 00 00 donc 1120 octets
+**1)**  poid de 60 04 00 00 donc 1120 octets
 il a augmenté car on est passer a une palette de 256 couleurs (00 01 00 00) et qu'on code maintenant chaque pixels sur 8 bits
-#### 2) 
-on peut trouver a A0  codé sur 4 octet l'adresse de début ( ici 36 04 00 00)
-#### 3) 
-![Image réponses okteta](A6.png)
+**2)**  on peut trouver a A0  codé sur 4 octet l'adresse de début ( ici 36 04 00 00)
+**3)**  ![Image réponses okteta](A6.png)
 on lit les octets deux par deux, le premier est le nombre d'occurence de la couleurs qui est définit dans le deuxieme octet
 00 représente le blanc et 01 représente le rouge
 donc si on a 01 00 on aura un pixels rouge et si on a 01 01 on aura un pixel blanc
@@ -87,11 +65,9 @@ donc si on lit notre image ci-dessus on a :
 01 01 00 00 01 01 01 00 01 01 01 00 00 00 00 01 - 1 blanc, fin de ligne, 1 blanc, 1 rouge, 1 blanc,1 rouge, fin de ligne, fin d'image
 
 ### A.7)
-#### 1) 
-le poid de l'image est 1102 octets
+**1)**  le poid de l'image est 1102 octets
 le poid est moins grand que précedemment car dans cette image il y'a des suite de pixels qui ont la meme couleurs, donc la compression en RLE prend tout son sens car elle permet de coder ça plus facilement 
-#### 2) 
-![Image réponses okteta](A7.png)
+**2)**  ![Image réponses okteta](A7.png)
 04 01 00 00 04 00 00 00 04 00 - 4 blanc, fin de ligne, 4 rouge, fin de ligne, 4 rouge
 00 00 01 01 01 00 01 01 01 00 00 00 00 01 - fin de ligne, 1 blanc, 1 rouge, 1 blanc, 1 rouge, fin de ligne, fin d'image
 
