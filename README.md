@@ -6,13 +6,13 @@
 Il faut modifiez la taille du fichier dans okteta: 99 passe a 9A
 
 ### A.1)
-![Image réponses okteta](A1.png)
+![Image réponses okteta](A1.png){ width=360px } 
 
 ### A.2)
-![Image réponses okteta](A2.png)
+![Image réponses okteta](A2.png){ width=360px } 
 
 ### A.3) 
-74+28=102
+le poid de l'image augmente a 102 (74+28=102)
 #### 1)
 Toujours 24 bits par pixels -> car encore codée a 0x18
 #### 2)
